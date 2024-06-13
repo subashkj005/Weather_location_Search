@@ -23,3 +23,6 @@ class SearchLocationAPIView(APIView):
             
         except Locations.DoesNotExist:
             return Response(content={'error':"Location doesn't exist"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        except Exception as e:
+            return Response(content={'error':"Location doesn't exist"}, status=status.HTTP_400_BAD_REQUEST)
